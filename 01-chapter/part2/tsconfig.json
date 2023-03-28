@@ -12,7 +12,7 @@
   // 包含哪些文件名
   // "files": []
 
-  // 编译器的选项
+  // 编译器的选项 ********
   "compilerOptions": {
     // 指定ts别编译为的ES版本
     // 'es3', 'es5', 'es6', 'es2015', 'es2016', 'es2017', 'es2018', 'es2019', 'es2020', 'es2021', 'es2022', 'esnext'
@@ -26,5 +26,26 @@
     "outDir": "./dist",
     // 将代码合并为一个文件，注意module里的配置腰围system
     // "outFile": "./dist/app.js"
-  }
+    // 是否对js文件进行编译，默认false
+    "allowJs": true,
+    // 是否检查js代码是否符合语法规范，默认false
+    "checkJs": true,
+    // 是否移出注释
+    "removeComments": true,
+    // 不生成编译后的文件
+    // "noEmit": false,
+    // 当有错误时不编译
+    "noEmitOnError": true,
+    // 所有严格检查总开关
+    "strict": true,
+    // 用来设置编译后的文件是否使用严格模式
+    "alwaysStrict": true,
+    // 是否允许隐式any
+    "noImplicitAny": false,
+    // 不允许不明确类型的this
+    "noImplicitThis": false,
+    // 严格的检查空值
+    "strictNullChecks": false
+  },
+
 }
