@@ -1,0 +1,1 @@
+!function(){"use strict";console.log({name:"xiaoming",age:10}),console.log(3)}();
