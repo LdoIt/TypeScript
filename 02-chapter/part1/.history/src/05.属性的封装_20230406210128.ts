@@ -1,0 +1,39 @@
+/*
+ * @Date: 2023-04-06 20:50:18
+ */
+(function() {
+  class Person {
+    // TS可以在属性前添加属性的修饰符
+        /*
+        *   public 修饰的属性可以在任意位置访问（修改） 默认值
+        *   private 私有属性，私有属性只能在类内部进行访问（修改）
+        *       - 通过在类中添加方法使得私有属性可以被外部访问
+        *   protected 受包含的属性，只能在当前类和当前类的子类中访问（修改）
+        *
+        * */
+       private _name: string;
+       private _age: number;
+
+       constructor(name: string, age: number) {
+        this._name = name;
+        this._age = age;
+       }
+
+       getName() {
+        return this._name
+       }
+       setAge(value: number) {
+        if(value<0) return
+        return this._age = value;
+       }
+
+       
+  }
+  const person = new Person('zs', 10);
+  console.log(person);
+  console.log(person.getName());
+  // 
+  console.log(person.setAge(-13));
+  console.log(person.setAge(13));
+  
+})()
