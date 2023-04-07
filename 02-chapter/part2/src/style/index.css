@@ -1,4 +1,59 @@
-body {
-  background-color: aqua;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font: bold 20px 'Courier';
+}
+.container {
+  width: 360px;
+  height: 420px;
+  margin: 100px auto;
+  background-color: #b7d4a8;
+  border: 10px solid black;
+  border-radius: 10px;
+}
+.container > div {
+  width: 100%;
+  height: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.container > div .stage {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 2px solid black;
+}
+.container > div .stage .snake {
+  position: absolute;
+}
+.container > div .stage .snake > div {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border: 1px solid #b7d4a8;
+}
+.container > div .stage .food {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  width: 10px;
+  height: 10px;
+}
+.container > div .stage .food > div {
+  width: 4px;
+  height: 4px;
+  background-color: black;
+  transform: rotate(45deg);
+}
+.container > div .scorePanel {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
 }
