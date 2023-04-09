@@ -26,10 +26,8 @@
   height: 300px;
   border: 2px solid black;
 }
-.container > div .stage .snake {
-  position: absolute;
-}
 .container > div .stage .snake > div {
+  position: absolute;
   width: 10px;
   height: 10px;
   background-color: black;
