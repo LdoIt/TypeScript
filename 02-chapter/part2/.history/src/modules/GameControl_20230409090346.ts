@@ -61,7 +61,7 @@ class GameControl {
         break;
     }
     // 判断蛇是否吃到了食物
-    this.isEatFood();
+    this.isEatFood(X, Y);
     // 如果超出限制位置就抛出错误
     try {
       this.snake.X = X;
@@ -74,8 +74,8 @@ class GameControl {
     this.isLive && setTimeout(this.run.bind(this), (300 - (this.scorePanel.level-1)*30));
   }
   // 判断蛇是否迟到了食物
-  isEatFood() {
-    if (this.snake.X == this.food.X && this.snake.Y == this.food.Y) {
+  isEatFood(X: number, Y: number) {
+    if (X == this.food.X && Y == this.food.Y) {
       this.food.change();
       this.scorePanel.addScore();
       this.snake.addBody();

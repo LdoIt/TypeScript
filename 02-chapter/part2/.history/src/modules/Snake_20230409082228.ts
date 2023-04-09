@@ -22,47 +22,21 @@ class Snake {
   }
   // 设置蛇头的坐标
   set X(value) {
-    // 如果X没有变的话直接退出
-    if(this.X === value){      
-      return;
-    }
-    // 水平方向发生了掉头
-    if(this.bodies[1] && (this.bodies[1] as HTMLElement).offsetLeft === value) {
-      // 当向右掉头时，继续向左走
-      if(this.X < value) {
-        value = this.X - 10
-      }else {
-        value = this.X + 10
-      }
-    }
     // 如果是合法值
     if(value>=0 && value<=290) {
-      this.moveBodies()
-      this.head.style.left = value + 'px';
       this.checkHeadBody()
+      this.head.style.left = value + 'px';
+      this.moveBodies()
     }else { // 不合法，GAME OVER
       throw new Error('GAME OVER');
     }
   }
   set Y(value) {
-    if(this.Y === value){
-      return;
-    }
-    // 禁止掉头
-    if(this.bodies[1] && (this.bodies[1] as HTMLElement).offsetTop === value) {
-      if(this.Y < value) {
-        value = this.Y - 10
-      }else {
-        value = this.Y + 10
-      }
-    }
-
     // 如果是合法值
     if(value>=0 && value<=290) {
-      this.moveBodies();
-      this.head.style.top = value + 'px';
       this.checkHeadBody()
-      
+      this.head.style.top = value + 'px';
+      this.moveBodies();
     }else { // 不合法，GAME OVER
       throw new Error('GAME OVER');
     }
@@ -80,8 +54,6 @@ class Snake {
         let Y = (this.bodies[i-1] as HTMLElement).offsetTop;
         (this.bodies[i] as HTMLElement).style.left = X + 'px';
         (this.bodies[i] as HTMLElement).style.top = Y + 'px';
-        console.log((this.bodies[i] as HTMLElement).style.left);
-        console.log((this.bodies[i] as HTMLElement).style.top);
     }
   }
 

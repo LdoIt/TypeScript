@@ -30,9 +30,9 @@ class Snake {
     if(this.bodies[1] && (this.bodies[1] as HTMLElement).offsetLeft === value) {
       // 当向右掉头时，继续向左走
       if(this.X < value) {
-        value = this.X - 10
+        this.X = this.X - 10
       }else {
-        value = this.X + 10
+        this.X = this.X + 10
       }
     }
     // 如果是合法值
@@ -51,9 +51,9 @@ class Snake {
     // 禁止掉头
     if(this.bodies[1] && (this.bodies[1] as HTMLElement).offsetTop === value) {
       if(this.Y < value) {
-        value = this.Y - 10
+        this.Y = this.Y - 10
       }else {
-        value = this.Y + 10
+        this.Y = this.Y + 10
       }
     }
 
